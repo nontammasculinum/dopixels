@@ -21,6 +21,11 @@ int _ren_handle(struct screen *screen);
 _ren_drawpx(struct screen *screen, int x, int y, Uint32 color);
 /*quits the program and destroys all the SDL stuff in your screen*/
 int _ren_quit(struct screen *screen);
+/*draws a rectangle at (x1, y1) with size (x2 - x1, y2 - y1) with color (color)*/
+int _ren_drawrect(struct screen *screen, int x1, int y1, int x2, int y2, Uint32 color);
+/*draws a Uint32 array (color) to the screen at (_x, _y) with size (xsz, ysz) which should be set
+  to the size of the sprite or less (otherwise a segfault may occur)*/
+int _ren_drawsprite(struct screen *screen, int _x, int _y, int xsz, int ysz, Uint32 *color);
 ```
 Here is an example usage that renders a line on your window :)
 ```C
@@ -37,3 +42,8 @@ int main() {
 ```
 
 note: sdl is included as <SDL2/SDL.h> in _ren.h
+
+## changelog
+
+1.1 added rect drawrect and drawsprite UwU
+1.0 created the program :)
