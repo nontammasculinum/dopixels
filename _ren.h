@@ -21,5 +21,7 @@ int _ren_clear(struct screen *screen, Uint32 color);
 int _ren_handle(struct screen *screen);
 int _ren_quit(struct screen *screen);
 int _ren_drawpx(struct screen *screen, int x, int y, Uint32 color);
+int _ren_drawrect(struct screen *screen, int x1, int y1, int x2, int y2, Uint32 color);
+int _ren_drawsprite(struct screen *screen, int _x, int _y, int xsz, int ysz, Uint32 *color);
 
 #endif

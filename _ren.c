@@ -38,3 +38,15 @@ int _ren_drawpx(struct screen *screen, int x, int y, Uint32 color) {
 	screen->pixels[x + y * screen->size[0]] = color;
 }
 
+int _ren_drawrect(struct screen *screen, int x1, int y1, int x2, int y2, Uint32 color) {
+	for(int y = y1; y < y2; y++)
+		for(int x = x1; x < x2; x++)
+			_ren_drawpx(screen, x, y, color);
+}
+
+int _ren_drawsprite(struct screen *screen, int _x, int _y, int xsz, int ysz, Uint32 *color) {
+	for(int y = 0; y < ysz; y++)
+		for(int x = 0; x < xsz; x++)
+			_ren_drawpx(screen, _x + x, _y + x, color[x + y * xsz]);
+}
+
