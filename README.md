@@ -44,6 +44,7 @@ int main() {
 note: sdl is included as <SDL2/SDL.h> in _ren.h
 
 ## changelog
-
+```
 1.1 added rect drawrect and drawsprite UwU
 1.0 created the program :)
+```
