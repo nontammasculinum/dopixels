@@ -18,7 +18,7 @@ _ren_clear(struct screen *screen, Uint32 color);
   pixel buffer, and clearing the renderer) returns 1 if quit and 0 if not quit*/
 int _ren_handle(struct screen *screen);
 /*draws a pixel at (x, y) with color (color)*/
-_ren_drawpx(struct screen *screen, int x, int y, Uint32 color);
+int _ren_drawpx(struct screen *screen, int x, int y, Uint32 color);
 /*quits the program and destroys all the SDL stuff in your screen*/
 int _ren_quit(struct screen *screen);
 /*draws a rectangle at (x1, y1) with size (x2 - x1, y2 - y1) with color (color)*/
@@ -35,7 +35,7 @@ int main() {
   struct screen screen;
   _ren_setup(&screen, 400, 400);
   _ren_clear(&screen, 0x00000000);
-  for(int i = 0; i < 400; i++) _ren_drawpx(i, i, 0xFFFFFFFF);
+  for(int i = 0; i < 400; i++) _ren_drawpx(&screen, i, i, 0xFFFFFFFF);
   while(_ren_handle(&screen));
   _ren_quit(&screen);
 }
