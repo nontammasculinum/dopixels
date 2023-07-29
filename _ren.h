@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <SDL2/SDL.h>
 
 #ifndef _RENH
 #define _RENH
 
-#define UINT32MAX 0xFFFFFFFF
 
 struct screen {
 	SDL_Event    event;
@@ -14,6 +14,7 @@ struct screen {
 	SDL_Texture  *texture;
 	Uint32       *pixels;
 	int           size[2];
+	float         deltatime;
 };
 
 int _ren_setup(struct screen *screen, int width, int height);
