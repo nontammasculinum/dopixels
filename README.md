@@ -36,7 +36,7 @@ int main() {
   _ren_setup(&screen, 400, 400);
   _ren_clear(&screen, 0x00000000);
   for(int i = 0; i < 400; i++) _ren_drawpx(&screen, i, i, 0xFFFFFFFF);
-  while(_ren_handle(&screen));
+  while(!_ren_handle(&screen));
   _ren_quit(&screen);
 }
 ```
